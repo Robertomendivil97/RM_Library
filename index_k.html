@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Practica 6 - VUE</title>
+        <script src="https://unpkg.com/vue@3"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    </head>
+
+    <body style="text-align: center;" >
+         
+
+        <!----------------------USO DE DOM------------------------->
+        <div class="container-fluid" id="app">
+            <h1>Hola! </h1><br>
+            <h3>Referencia DOM</h3>
+            <p ref="p"></p>
+        </div>
+
+        <script>
+            Vue.createApp({
+                mounted(){
+                    var today = new Date();
+                    this.$refs.p.textContent = 'La fecha actual es ' + today;
+                }
+            }).mount('#app')
+        </script>
+
+        <!----------------------METODOS + COMPUTED ---------------------------->
+        <div class="container-fluid" id="contador2">
+
+            <h2>Contador</h2>
+            <button type="button" class="btn btn-outline-success " @click="decrement">  -  </button>
+            <button type="button" class="btn btn-outline-success" @click="increment">  +  </button>
+            <h1>{{ contador }}</h1>
+            <p>{{mensaje_bienvenida}}</p>
+            <img style="width:250px" src="https://images.assetsdelivery.com/compings_v2/terrry4/terrry41905/terrry4190501002.jpg"></img>
+
+        </div>
+
+        <script>
+            Vue.createApp({
+                data() {
+                    return {
+                        contador : 0
+
+                    }
+                },
+                methods: {
+                    increment() {
+                        this.contador++;
+                    },
+                    decrement(){
+                        this.contador--;
+                    }
+                },
+                
+                computed: {
+                    mensaje_bienvenida: function(){
+                        return this.contador >= 10 ? 'Ya le picaste mucho' : 'Click click click'
+                    }
+                }
+            }).mount('#contador2')
+        </script>
+
+    </body>
+</html>
