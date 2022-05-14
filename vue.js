@@ -8,13 +8,12 @@ Vue.createApp({
     
     data(){
         return{
-            show: false, //this.name == 'Erik'? true : false,
+            show: false, 
             hideCompleted: false,
-            name: 'Chihuahua',
+            
             text: '',
             valor: 0,
-            lugares: ['Oaxaca','San Luis Potosí','Tampico', 'Xalapa'],
-            mex: 'Tampico',
+            
             books: [
                 { Title: 'Opencv', Topic: 'Computer Vision', URL: 'https://opencv.org/'},
                 { Title: 'ROS', Topic: 'Robotics', URL: 'https://ros.org/' },
@@ -30,13 +29,11 @@ Vue.createApp({
 
         alerta(){
             alert('Valor de name es: ' + this.name)
-            //var nombre = this.name
-            //this.name = 'Felipe'
-            //nombre = 'Jose'
+            
         },
         addline(){
             this.text += event.target.value;
-            event.target.value = '';
+            event.target.value = ''+ ' ';
         },
 
         toogleShow(){
