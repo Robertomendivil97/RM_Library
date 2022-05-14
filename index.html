@@ -64,7 +64,7 @@
                     <div class="row align-items-center"> 
                    
                     <div class="col-sm-12">s
-                            <h3 style="font-family: 'Courier New', Courier, monospace;"> List of:  </h3>
+                            <h3 style="font-family: 'Courier New', Courier, monospace; text-align: center"> List of Books/Resources:  </h3>
                             
                             <table class="table table-striped table-bordered">
                                 <thead>
@@ -83,10 +83,11 @@
                                 </tbody>
                             </table>
                             <p>  </p>
+                           
                             <button @click="toogleShow">
                                 {{ show ? 'Hide' : 'Show' }}
                             </button>
- 
+                            
                             <p>  </p>   
                         </div>
                     </div>
@@ -99,22 +100,25 @@
                         <br></br>
                     </div>
 
-
-
+ 
                     <div class="row">
                         <div>
                             <button @click="valor++ "> Book count 
                                  </button>
+                                 <br> </br>
                             <span>{{valor}}</span>
                         </div>
                     </div>
+                    <h3 style="text-align: center">  
                     <div class="row">   
                         <div>
                             <p></p>
                             <img style="width:200px;height:150px" src="Img/Logo2_RMlibrary.jpg" alt="Logo"></img>
+                        </h3>
                             <p v-show="show"><strong>All books</strong></p>
 
                             <p ref="p"> </p>
+                    
                         </div>
                     </div>
                     </div>
